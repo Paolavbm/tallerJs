@@ -41,7 +41,7 @@
         this.speed_x = 3;
         this.board = board;
         this.direction = -1;
-        this.bounce_angle = 0;
+        this.bounce_angle = 0;;
         this.max_bounce_angle = Math.PI / 12;
         this.speed = 3;
         board.ball = this;
@@ -90,7 +90,7 @@
         this.board.bars.push(this)
 
         //definimos la forma
-        this.kind = "rectangule"
+        this.kind = "rectangle"
         this.speed = 5
     };
 
@@ -174,8 +174,8 @@
         }
 
         // Colisión punto b con a
-        if (element_a.x <= b.x &&a.x +a.width >= b.x + b.width) {
-            if (element_a.y <= b.y &&a.y +a.height >= b.y + b.height) {
+        if (a.x <= b.x &&a.x +a.width >= b.x + b.width) {
+            if (a.y <= b.y &&a.y +a.height >= b.y + b.height) {
                 hit = true;
             }
         }
@@ -186,7 +186,7 @@
     function draw(ctx, element) {
 
         switch (element.kind) {
-            case "rectangule":
+            case "rectangle":
                 console.log(element)
                 ctx.fillRect(element.x, element.y, element.width, element.height)
           break;
