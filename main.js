@@ -40,7 +40,7 @@
         this.speed_y = 0;
         this.speed_x = 3;
         this.board = board;
-        this.direction = 1;
+        this.direction = -1;
         this.bounce_angle = 0;
         this.max_bounce_angle = Math.PI / 12;
         this.speed = 3;
@@ -91,7 +91,7 @@
 
         //definimos la forma
         this.kind = "rectangule"
-        this.speed = 10
+        this.speed = 5
     };
 
     // funciones para moverlo
@@ -155,27 +155,27 @@
 
     //encuentros
 
-    function hit(element_a, element_b) {
+    function hit(a, b) {
         let hit = false;
 
         // Colisiones horizontales
-        if (element_b.x + element_b.width >= element_a.x && element_b.x < element_a.x + element_a.width) {
+        if (b.x + b.width >= a.x && b.x <a.x +a.width) {
             // Colisiones verticales
-            if (element_b.y + element_b.height >= element_a.y && element_b.y < element_a.y + element_a.height) {
+            if (b.y + b.height >=a.y && b.y <a.y +a.height) {
                 hit = true;
             }
         }
 
         // Colisión punto a y b
-        if (element_b.x <= element_a.x && element_b.x + element_b.width >= element_a.x + element_a.width) {
-            if (element_b.y <= element_a.y && element_b.y + element_b.height >= element_a.y + element_a.height) {
+        if (b.x <=a.x && b.x + b.width >=a.x +a.width) {
+            if (b.y <=a.y && b.y + b.height >=a.y +a.height) {
                 hit = true;
             }
         }
 
         // Colisión punto b con a
-        if (element_a.x <= element_b.x && element_a.x + element_a.width >= element_b.x + element_b.width) {
-            if (element_a.y <= element_b.y && element_a.y + element_a.height >= element_b.y + element_b.height) {
+        if (element_a.x <= b.x &&a.x +a.width >= b.x + b.width) {
+            if (element_a.y <= b.y &&a.y +a.height >= b.y + b.height) {
                 hit = true;
             }
         }
@@ -189,14 +189,14 @@
             case "rectangule":
                 console.log(element)
                 ctx.fillRect(element.x, element.y, element.width, element.height)
-            case "circle":
+          break;
+                case "circle":
                 ctx.beginPath();
                 ctx.arc(element.x, element.y, element.radius, 0, 7)
                 ctx.fill();
                 ctx.closePath()
                 break;
-                default:
-                    break;
+                
             
         }
     }
@@ -214,22 +214,22 @@ let ball = new Ball(350, 100, 10, board);
 
 
 //aqui escuchamos el teclado para que se realice movimiento en pantalla
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", function (ev) {
 
-    if (e.keyCode == 38) {
-        e.preventDefault();
+    if (ev.keyCode == 38) {
+        ev.preventDefault();
         bar.up();
-    } else if (e.keyCode == 40) {
-        e.preventDefault();
+    } else if (ev.keyCode == 40) {
+        ev.preventDefault();
         bar.down();
-    } else if (e.keyCode == 87) {
-        e.preventDefault();
+    } else if (ev.keyCode == 87) {
+        ev.preventDefault();
         bar2.up();
-    } else if (e.keyCode == 83) {
-        e.preventDefault();
+    } else if (ev.keyCode == 83) {
+        ev.preventDefault();
         bar2.down();
-    } else if (e.keyCode === 32) {
-        e.preventDefault();
+    } else if (ev.keyCode === 32) {
+        ev.preventDefault();
         board.playing = !board.playing;
     }
 });
