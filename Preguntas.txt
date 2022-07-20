@@ -1,0 +1,21 @@
+-¿Que es keyCode?
+Una variable global que representa las última tecla presionada. Se usa para revisar las teclas especiales como las flechas de ARRIBA, ABAJO, IZQUIERDA y DERECHA y las teclas ALT, CONTROL y SHIFT.
+
+
+- Para que sirve Window.requestAnimationFrame()?
+El método window.requestAnimationFrame informa al navegador que quieres realizar una animación y solicita que el navegador programe el repintado de la ventana para el próximo ciclo de animación. El método acepta como argumento una función a la que llamar antes de efectuar el repintado.
+
+
+-¿Cómo se implementa POO en JS?
+JavaScript, utiliza funciones especiales llamadas funciones constructoras para definir objetos y sus características.
+Los constructores proporcionan los medios para crear tantos objetos como necesites de una manera efectiva, adjuntando datos y funciones a ellos según sea necesario.
+Cuando se crea una nueva instancia del objeto a partir de una función constructora, su funcionalidad central no se copia en el nuevo objeto como lenguajes OO "clásicos", sino que la funcionalidad está vinculada a través de una cadena de referencia llamada cadena de prototipos.
+Así que esto no es una verdadera instanciación, estrictamente hablando, JavaScript usa un mecanismo diferente para compartir funcionalidad entre objetos.
+
+-Para que sirven los prototipos de objetos
+Los prototipos son un mecanismo mediante el cual los objetos en JavaScript heredan características entre sí. En este artículo, explicaremos como funcionan los prototipos y también cómo se pueden usar las propiedades de estos para añadir métodos a los contructores existentes
+
+-Cual es la diferencia entre this y self en javascript
+En javascript this, es dependiente del contexto en el cual se encuentra y va a ir cambiando de método en método ya que es dinámico.
+
+La técnica de dejar this guardado en self se usa para tener siempre la referencia original al objeto que disparó ese método
